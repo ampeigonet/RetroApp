@@ -1,6 +1,5 @@
 #parent {
   background-color: #fff;
-  margin: 33px;
   font-family: "Cabin", sans-serif;
   text-align: center;
 
@@ -13,8 +12,9 @@
     margin-bottom: 5%;
   }
 
-  #buttons {
+  #buttons .button_to {
     align-items: center;
+    display: inline;
 
     .start-button {
       outline: none;
