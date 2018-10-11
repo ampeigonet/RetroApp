@@ -1,7 +1,7 @@
-<head>
+<% content_for :head do %>
   <title>Home - Wye RetroApp</title>
   <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-</head>
+<% end %>
 <div id="parent">
   <%= image_tag("/assets/wye-logo.png") %>
   <h1 class="welcome-message"><%= @message %></h1>
