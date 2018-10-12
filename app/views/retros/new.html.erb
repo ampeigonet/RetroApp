@@ -1,11 +1,13 @@
 <% content_for :head do %>
   <title>New retro - WyeRetroApp</title>
 <% end %>
-<header id="header">
-  <div class='nav'>
-    <%= image_tag("/assets/wye-logo.png", size: "40x40", class: "header-icon") %>
+<div id="header">
+  <div id="nav">
+    <div class="headerIcons">
+      <Button id="start-new-button" class="start-button">Post your topics!</Button>
+      <Button id="time"></Button>
+      <%= image_tag("/assets/wye-logo.png", size: "40x40", class: "header-icon") %>
+    </div>
   </div>
-</header>
-<div id="buttons">
-  <%= button_to "Start new Retro!", '/retros/new', method: :get, class: "start-button" %>
 </div>
+
