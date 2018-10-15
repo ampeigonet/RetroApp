@@ -61,3 +61,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # JQuery 
 gem 'jquery-rails'
+
+# Rspec for testing
+gem 'rspec'
