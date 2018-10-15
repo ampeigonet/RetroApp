@@ -1,16 +1,13 @@
-// Get/initialize elements
-
-document.addEventListener("DOMContentLoaded", function(event) {
-  let startNewRetroButton = document.getElementById("start-new-button");
-  let timeText = document.getElementById("time");
+$(document).ready(function() {
+  // Get HTML elements
+  let startNewRetroButton = $("#start-new-button");
+  let timeText = $("#time");
 
   let timeNow;
 
-  // Set timer values
+  // Timer values
 
   const postTimer = 1000 * 60 * 60;
-
-  // Aux functions
 
   function checkTimeLeft() {
     if (timeNow === postTimer) {
@@ -45,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       timeLeft = timeLeft - 1000;
       if (timeLeft >= 0) {
         let newValue = getTimerValue();
-        document.getElementById("time").innerText = newValue;
+        timeText.text(newValue);
       }
       if (timeLeft === 0) {
         clearInterval(timeLeft);
@@ -53,11 +50,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }, 1000);
   }
 
-  startNewRetroButton.addEventListener("click", function() {
-    startNewRetroButton.style.display = "none";
+  startNewRetroButton.on("click", function() {
+    startNewRetroButton.hide({
+      duration: 100
+    });
     timeNow = 0;
-    document.getElementById("time").innerText = "00:00";
-    timeText.style.display = "inline";
-    startTimer();
+    timeText.text("00:00");
+    timeText.show({
+      duration: 400,
+      complete: startTimer()
+    });
   });
 });
