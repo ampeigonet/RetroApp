@@ -3,6 +3,7 @@ $(document).ready(function() {
   let startNewRetroButton = $("#start-new-button");
   let timeText = $("#time");
   let discussionSection = $("#discuss");
+  let mentionSection = $("#mention");
 
   let timeNow;
 
@@ -61,8 +62,10 @@ $(document).ready(function() {
       duration: 400,
       complete: startTimer()
     });
-
     discussionSection.show({
+      duration: 400
+    });
+    mentionSection.show({
       duration: 400
     });
   });
