@@ -49,5 +49,25 @@ html {
         }
       }
     }
+
+    #Boards {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+
+      #discuss {
+        border-width: 1px;
+        width: 200px;
+        height: 300px;
+        margin-top: 10%;
+        display: none;
+      }
+    }
+
+    legend {
+      font-size: 20px;
+      padding: 2px;
+      color: #02a397;
+    }
   }
 }
