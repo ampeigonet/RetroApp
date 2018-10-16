@@ -2,6 +2,7 @@ $(document).ready(function() {
   // Get HTML elements
   let startNewRetroButton = $("#start-new-button");
   let timeText = $("#time");
+  let discussionSection = $("#discuss");
 
   let timeNow;
 
@@ -59,6 +60,10 @@ $(document).ready(function() {
     timeText.show({
       duration: 400,
       complete: startTimer()
+    });
+
+    discussionSection.show({
+      duration: 400
     });
   });
 });
