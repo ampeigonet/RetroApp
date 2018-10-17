@@ -1,5 +1,10 @@
+@font-face {
+  font-family: 'Cabin';
+  src: url(https://fonts.googleapis.com/css?family=Cabin) format('opentype');
+}
+
 #parent {
-  font-family: "Cabin", sans-serif;
+  font-family: 'Cabin', sans-serif;
   text-align: center;
 
   h1 {
