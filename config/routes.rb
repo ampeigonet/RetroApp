@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  get '/' => 'greetings#hello'
+  root to: 'greetings#index'
 end
