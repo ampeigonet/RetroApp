@@ -3,7 +3,5 @@
 <div id="parent">
   <%= image_tag("/assets/wye-logo.png") %>
   <h1 class="welcome-message"><%= @message %></h1>
-  <div id="buttons">
-    <%= button_to "Start", 'retro/new', method: :get, class: "start-button" %>
-  </div>
+  <%= button_to "Start", 'retro/new', method: :get, class: "start-button" %>
 </div>
