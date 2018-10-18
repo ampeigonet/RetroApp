@@ -1,34 +1,25 @@
-// Get/initialize elements
+document.addEventListener("DOMContentLoaded", function (event) {
 
-document.addEventListener("DOMContentLoaded", function(event) {
+  // DOM elements
+
   let startNewRetroButton = document.getElementById("start-new-button");
   let timeText = document.getElementById("time");
 
-  let timeNow;
-
   // Set timer values
 
-  const postTimer = 1000 * 60 * 60;
+  const postingTime = 1000 * 60 * 60;
+  const postingTimeWarning = 1000 * 60 * 50;
 
   // Aux functions
 
-  function checkTimeLeft() {
-    if (timeNow === postTimer) {
-      return false;
-    } else if (timeNow >= 1000 * 60 * 50) {
+  function checkTimeLeft(time, timeMax) {
+    if (time >= timeMax) {
       timeText.style.color = "#FF0000";
-      return true;
     }
   }
 
-  function getTimerValue() {
-    timeNow = timeNow + 1000;
-
-    let continueTimer = checkTimeLeft();
-
-    if (!continueTimer) {
-      clearInterval();
-    }
+  function getTimerValue(timeNow, warningTime) {
+    checkTimeLeft(timeNow, warningTime);
 
     const minutes = Math.floor(timeNow / (1000 * 60));
     const seconds = Math.floor(timeNow / 1000) % 60;
@@ -39,25 +30,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
     return minutesString + ":" + secondsString;
   }
 
-  function startTimer() {
-    let timeLeft = postTimer;
-    setInterval(function() {
+  function timer(maxValue, maxValueWarning) {
+    let timeNow = 0;
+    let timeLeft = maxValue;
+    const interval = setInterval(function () {
+      timeNow = timeNow + 1000;
       timeLeft = timeLeft - 1000;
       if (timeLeft >= 0) {
-        let newValue = getTimerValue();
-        document.getElementById("time").innerText = newValue;
+        const newTimeValue = getTimerValue(timeNow, maxValueWarning);
+        document.getElementById("time").innerText = newTimeValue;
       }
       if (timeLeft === 0) {
-        clearInterval(timeLeft);
+        clearInterval(interval);
       }
     }, 1000);
   }
 
-  startNewRetroButton.addEventListener("click", function() {
+  startNewRetroButton.addEventListener("click", function () {
     startNewRetroButton.style.display = "none";
-    timeNow = 0;
     document.getElementById("time").innerText = "00:00";
     timeText.style.display = "inline";
-    startTimer();
+    timer(postingTime, postingTimeWarning);
   });
 });
