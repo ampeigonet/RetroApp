@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   function timer(maxValue, maxValueWarning) {
     let timeNow = 0;
     let timeLeft = maxValue;
-    const interval = setInterval(function () {
+    const interval = setInterval(() => {
       timeNow = timeNow + 1000;
       timeLeft = timeLeft - 1000;
       if (timeLeft >= 0) {
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
   }
 
-  startNewRetroButton.addEventListener("click", function () {
+  startNewRetroButton.addEventListener("click", () => {
     startNewRetroButton.style.display = "none";
     document.getElementById("time").innerText = "00:00";
     timeText.style.display = "inline";
