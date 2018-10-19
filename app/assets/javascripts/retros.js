@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // Get HTML elements
   let startNewRetroButton = $("#start-new-button");
   let timeText = $("#time");
@@ -38,7 +38,7 @@ $(document).ready(function() {
 
   function startTimer() {
     let timeLeft = postTimer;
-    setInterval(function() {
+    setInterval(() => {
       timeLeft = timeLeft - 1000;
       if (timeLeft >= 0) {
         let newValue = getTimerValue();
@@ -50,7 +50,7 @@ $(document).ready(function() {
     }, 1000);
   }
 
-  startNewRetroButton.on("click", function() {
+  startNewRetroButton.on("click", () => {
     startNewRetroButton.hide({
       duration: 100
     });
