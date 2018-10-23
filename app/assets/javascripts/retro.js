@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(() => {
   // Get HTML elements
   let startNewRetroButton = $("#start-new-button");
   let timeText = $("#time");
