@@ -13,7 +13,7 @@ $(document).ready(function () {
     if (timeNow === postTimer) {
       return false;
     } else if (timeNow >= 1000 * 60 * 50) {
-      timeText.style.color = "#FF0000";
+      timeText.css({ "color": "#FF0000" });
       return true;
     }
   }
