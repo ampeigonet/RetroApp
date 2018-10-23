@@ -1,11 +1,12 @@
-@font-face {
-  font-family: 'Cabin';
-  src: url(https://fonts.googleapis.com/css?family=Cabin) format('opentype');
-}
+@import url(web-fonts-url("Cabin"));
 
-#parent {
+.parent {
   font-family: 'Cabin', sans-serif;
   text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   h1 {
     padding: 5px 5px 5px 15px;
@@ -16,18 +17,13 @@
   }
 }
 
-#buttons {
-  align-items: center;
-
-  .start-button {
-    outline: none;
-    min-width: 120px;
-    background: linear-gradient(#fffdfd, #bbb6b6);
-    border-radius: 5px;
-    border-width: 1px;
-    border-color: #5f5a5a;
-    font-size: 15px;
-    line-height: 20px;
-    margin-right: 2%;
-  }
+.start-button {
+  outline: none;
+  min-width: 130px;
+  padding: 2px;
+  background: linear-gradient(#fffdfd, #bbb6b6);
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: #5f5a5a;
+  font-size: 15px;
 }
