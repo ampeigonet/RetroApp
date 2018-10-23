@@ -1,13 +1,5 @@
-<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-
-<div id="parent">
-
+<div class="parent">
   <%= image_tag("/assets/wye-logo.png") %>
-
   <h1 class="welcome-message"><%= @message %></h1>
-
-  <div id="buttons">
-    <%=button_to "Start", retro_new_path, method: :get, class: "start-button" %>
-  </div>
-
+  <%=button_to "Start", retro_new_path, method: :get, class: "start-button" %>
 </div>

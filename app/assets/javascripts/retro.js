@@ -1,11 +1,9 @@
-document.addEventListener("DOMContentLoaded", function (event) {
+$(document).ready(() => {
+  // Get HTML elements
+  let startNewRetroButton = $("#start-new-button");
+  let timeText = $("#time");
 
-  // DOM elements
-
-  let startNewRetroButton = document.getElementById("start-new-button");
-  let timeText = document.getElementById("time");
-
-  // Set timer values
+  // Timer values
 
   const postingTime = 1000 * 60 * 60;
   const postingTimeWarning = 1000 * 60 * 50;
@@ -14,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   function checkTimeLeft(time, timeMax) {
     if (time >= timeMax) {
-      timeText.style.color = "#FF0000";
+      timeText.css({ "color": "#FF0000" });
     }
   }
 
@@ -23,9 +21,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     const minutes = Math.floor(timeNow / (1000 * 60));
     const seconds = Math.floor(timeNow / 1000) % 60;
-
-    let minutesString = minutes < 10 ? "0" + minutes : minutes;
-    let secondsString = seconds < 10 ? "0" + seconds : seconds;
+    const minutesString = minutes < 10 ? "0" + minutes : minutes;
+    const secondsString = seconds < 10 ? "0" + seconds : seconds;
 
     return minutesString + ":" + secondsString;
   }
@@ -38,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       timeLeft = timeLeft - 1000;
       if (timeLeft >= 0) {
         const newTimeValue = getTimerValue(timeNow, maxValueWarning);
-        document.getElementById("time").innerText = newTimeValue;
+        timeText.text(newTimeValue);
       }
       if (timeLeft === 0) {
         clearInterval(interval);
@@ -46,10 +43,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
   }
 
-  startNewRetroButton.addEventListener("click", () => {
-    startNewRetroButton.style.display = "none";
-    document.getElementById("time").innerText = "00:00";
-    timeText.style.display = "inline";
-    timer(postingTime, postingTimeWarning);
+  startNewRetroButton.on("click", () => {
+    startNewRetroButton.hide({
+      duration: 100
+    });
+    timeText.text("00:00");
+    timeText.show({
+      duration: 400,
+      complete: timer(postingTime, postingTimeWarning)
+    });
   });
 });
