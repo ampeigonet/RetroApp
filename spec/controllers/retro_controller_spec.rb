@@ -1,8 +1,6 @@
-require 'rspec'
 require 'spec_helper'
-require_relative '../../app/controllers/retros_controller.rb'
 
-RSpec.describe RetrosController do
+RSpec.describe RetroController do
   describe 'new method' do
     it 'should get new' do
       get :new
