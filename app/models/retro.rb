@@ -1,2 +1,0 @@
-class Retro < ApplicationRecord
-end
