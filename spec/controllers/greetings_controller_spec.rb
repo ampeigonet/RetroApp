@@ -1,17 +1,15 @@
-require 'rspec'
-require 'spec_helper'
-require_relative '../../app/controllers/greetings_controller.rb'
+require 'rails_helper'
 
 RSpec.describe GreetingsController do
-  describe 'hello method' do
-    it 'should get hello successfully' do
-      get :hello
+  describe 'index method' do
+    it 'should get index successfully' do
+      get :index
       expect(response.status).to eq(200)
     end
 
-    it 'should render hello template' do
-      get :hello
-      expect(response).to render_template('hello')
+    it 'should render index template' do
+      get :index
+      expect(response).to render_template('index')
     end
   end
 end

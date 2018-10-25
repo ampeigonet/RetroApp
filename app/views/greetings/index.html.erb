@@ -1,0 +1,5 @@
+<div class="parent">
+  <%= image_tag("/assets/wye-logo.png") %>
+  <h1 class="welcome-message"><%= @message %></h1>
+  <%=button_to "Start", retro_new_path, method: :get, class: "start-button" %>
+</div>
