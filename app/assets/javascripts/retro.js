@@ -2,6 +2,7 @@ $(document).ready(() => {
   // Get HTML elements
   let startNewRetroButton = $("#start-new-button");
   let timeText = $("#time");
+  let discussionSection = $("#discuss");
 
   // Timer values
 
@@ -51,6 +52,9 @@ $(document).ready(() => {
     timeText.show({
       duration: 400,
       complete: timer(postingTime, postingTimeWarning)
+    });
+    discussionSection.show({
+      duration: 400
     });
   });
 });

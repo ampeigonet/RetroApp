@@ -32,3 +32,25 @@
 .start-button {
   margin-right: 42%;
 }
+
+.boards {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+
+  #discuss {
+    border-width: 1px;
+    width: 200px;
+    height: 300px;
+    display: none;
+  }
+}
+
+legend {
+  font-size: 20px;
+  padding: 2px;
+  color: #02a397;
+}
